@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the following paper."
+title: "LightningMedSeg3D"
+authors:
+  - family-names: "Fdez-Gonzalez"
+    given-names: "Marcos"
+    email: "marcos.fgonzalez@usc.es"
+    affiliation: "CITIUS, Universidade de Santiago de Compostela"
+  - family-names: "Nodar-Corral"
+    given-names: "Lois"
+    affiliation: "Universidade de Santiago de Compostela"
+  - family-names: "Fdez-Vidal"
+    given-names: "Xose R."
+    affiliation: "Universidade de Santiago de Compostela"
+  - family-names: "Estevez-Fernandez"
+    given-names: "Sergio"
+    affiliation: "Complejo Hospitalario Universitario de Vigo"
+  - family-names: "Comesana"
+    given-names: "Enrique"
+    affiliation: "Universidade de Santiago de Compostela"
+  - family-names: "Lopez-Pineiro"
+    given-names: "Pablo"
+    affiliation: "Universidade de Santiago de Compostela"
+license: Apache-2.0
+version: 1.0.0
+date-released: "2026-06-01"
+url: "https://github.com/Removirt/LightningMedSeg3D"
+preferred-citation:
+  type: article
+  title: "Comprehensive Evaluation of 3D CNN and Transformer Architectures for 3D Liver and Hepatic Tumour Segmentation in Medical Imaging using a PyTorch Lightning CLI Reproducible Pipeline"
+  journal: "Informatics in Medicine Unlocked"
+  year: 2026
+  authors:
+    - family-names: "Fdez-Gonzalez"
+      given-names: "Marcos"
+    - family-names: "Nodar-Corral"
+      given-names: "Lois"
+    - family-names: "Fdez-Vidal"
+      given-names: "Xose R."
+    - family-names: "Estevez-Fernandez"
+      given-names: "Sergio"
+    - family-names: "Comesana"
+      given-names: "Enrique"
+    - family-names: "Lopez-Pineiro"
+      given-names: "Pablo"

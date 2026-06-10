@@ -1,0 +1,23 @@
+# 3D U-Net on BTCV.
+seed_everything: 42
+
+trainer:
+  accelerator: gpu
+  devices: 1
+  precision: 16-mixed
+  max_epochs: 500
+  default_root_dir: ./runs/btcv/unet
+
+model:
+  architecture: unet
+  in_channels: 1
+  num_classes: 2
+  roi_size: [96, 96, 96]
+  learning_rate: 1.0e-3
+  weight_decay: 1.0e-5
+
+data:
+  dataset: btcv
+  data_root: ./data
+  roi_size: [96, 96, 96]
+  batch_size: 2
