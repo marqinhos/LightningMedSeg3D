@@ -5,12 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lightning_medseg3d"
 version = "1.0.0"
-description = "Reproducible 3D medical image segmentation benchmark built on PyTorch Lightning CLI and MONAI. Companion code for the BTCV/MSD Task03 liver and hepatic-tumour evaluation paper."
+description = "Reproducible 3D medical image segmentation benchmark built on PyTorch Lightning CLI and MONAI. Companion code for the BTCV/MSD Task03 liver segmentation benchmark paper."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
 authors = [
     { name = "Marcos Fdez-Gonzalez", email = "marcos.fgonzalez@usc.es" },
+    { name = "Pablo López-Piñeiro" },
+    { name = "Manuel Nogueira-Sixto" },
     { name = "Lois Nodar-Corral" },
     { name = "Xose R. Fdez-Vidal" },
     { name = "Sergio Estevez-Fernandez" },

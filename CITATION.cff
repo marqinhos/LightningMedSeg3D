@@ -6,9 +6,15 @@ authors:
     given-names: "Marcos"
     email: "marcos.fgonzalez@usc.es"
     affiliation: "CITIUS, Universidade de Santiago de Compostela"
+  - family-names: "Lopez-Pineiro"
+    given-names: "Pablo"
+    affiliation: "Universidade de Santiago de Compostela"
+  - family-names: "Nogueira-Sixto"
+    given-names: "Manuel"
+    affiliation: "Complejo Hospitalario Universitario de Vigo"
   - family-names: "Nodar-Corral"
     given-names: "Lois"
-    affiliation: "Universidade de Santiago de Compostela"
+    affiliation: "iTerra, Universidade de Santiago de Compostela"
   - family-names: "Fdez-Vidal"
     given-names: "Xose R."
     affiliation: "Universidade de Santiago de Compostela"
@@ -17,22 +23,27 @@ authors:
     affiliation: "Complejo Hospitalario Universitario de Vigo"
   - family-names: "Comesana"
     given-names: "Enrique"
-    affiliation: "Universidade de Santiago de Compostela"
-  - family-names: "Lopez-Pineiro"
-    given-names: "Pablo"
-    affiliation: "Universidade de Santiago de Compostela"
+    affiliation: "iTerra, Universidade de Santiago de Compostela"
 license: Apache-2.0
 version: 1.0.0
 date-released: "2026-06-01"
 url: "https://github.com/Removirt/LightningMedSeg3D"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21037952
+    description: "Archived trained model weights for all architectures"
 preferred-citation:
   type: article
-  title: "Comprehensive Evaluation of 3D CNN and Transformer Architectures for 3D Liver and Hepatic Tumour Segmentation in Medical Imaging using a PyTorch Lightning CLI Reproducible Pipeline"
+  title: "Comprehensive Evaluation of 3D CNN and Transformer Architectures for 3D Liver Segmentation in Medical Imaging: A Reproducible, Externally Validated Benchmark Built on a PyTorch Lightning CLI Pipeline"
   journal: "Informatics in Medicine Unlocked"
   year: 2026
   authors:
     - family-names: "Fdez-Gonzalez"
       given-names: "Marcos"
+    - family-names: "Lopez-Pineiro"
+      given-names: "Pablo"
+    - family-names: "Nogueira-Sixto"
+      given-names: "Manuel"
     - family-names: "Nodar-Corral"
       given-names: "Lois"
     - family-names: "Fdez-Vidal"
@@ -41,5 +52,3 @@ preferred-citation:
       given-names: "Sergio"
     - family-names: "Comesana"
       given-names: "Enrique"
-    - family-names: "Lopez-Pineiro"
-      given-names: "Pablo"
