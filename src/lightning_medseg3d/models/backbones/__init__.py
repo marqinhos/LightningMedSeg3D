@@ -2,7 +2,7 @@
 
 These modules are faithful copies of the reference PyTorch implementations
 used in the original toolkit
-(https://github.com/.../MedicalLiverSegmentationToolKit), preserving the
+(https://github.com/Removirt/MedicalLiverSegmentationToolKit), preserving the
 exact network topologies that produced the numbers reported in the paper:
 
 * :class:`UNet`           -- original 3D U-Net (and Res-UNet via ``block='BasicBlock'``).

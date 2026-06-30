@@ -4,13 +4,18 @@
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch Lightning](https://img.shields.io/badge/lightning-CLI-purple.svg)](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html)
 [![MONAI](https://img.shields.io/badge/MONAI-1.3%2B-orange.svg)](https://monai.io/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21037952.svg)](https://doi.org/10.5281/zenodo.21037952)
+
+> **📦 Pre-trained weights** — the trained weights for all nine architectures
+> (BTCV and MSD Task03) are archived on Zenodo and can be downloaded from
+> **<https://doi.org/10.5281/zenodo.21037952>**.
 
 Reproducible 3D medical image segmentation benchmark built on top of the
 [PyTorch Lightning CLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html)
 distribution and the [MONAI](https://monai.io/) framework. Companion code
 for the paper "_Comprehensive Evaluation of 3D CNN and Transformer
-Architectures for 3D Liver and Hepatic Tumour Segmentation in Medical
-Imaging using a PyTorch Lightning CLI Reproducible Pipeline_"
+Architectures for 3D Liver Segmentation in Medical Imaging: A Reproducible,
+Externally Validated Benchmark Built on a PyTorch Lightning CLI Pipeline_"
 (Informatics in Medicine Unlocked, under revision).
 
 > This repository **replaces** the legacy
@@ -92,7 +97,7 @@ lightning-medseg3d test --config configs/btcv/swin_unetr.yaml \
 # MSD Task03 — train Attention-UNet (liver + tumour)
 lightning-medseg3d fit --config configs/msd_task03/attention_unet.yaml
 
-# MSD Task03 — inference on the test set, saving NIfTI predictions
+# MSD Task03 — run inference on the test set (predicted volumes returned per batch)
 lightning-medseg3d predict --config configs/msd_task03/attention_unet.yaml \
     --ckpt_path runs/msd_task03/attention_unet/checkpoints/last.ckpt
 ```
@@ -102,8 +107,13 @@ single hyperparameter without editing the YAML:
 
 ```bash
 lightning-medseg3d fit --config configs/btcv/swin_unetr.yaml \
-    --model.learning_rate 1e-4 --trainer.max_epochs 200
+    --trainer.max_epochs 200 --data.batch_size 1
 ```
+
+## Pre-trained weights
+
+The trained model weights for all nine architectures, for both BTCV and MSD
+Task03, are archived on Zenodo: <https://doi.org/10.5281/zenodo.21037952>.
 
 ## Citation
 
@@ -111,8 +121,8 @@ If you use this toolkit, please cite:
 
 ```bibtex
 @article{FdezGonzalez2026LiverBenchmark,
-  title   = {Comprehensive Evaluation of 3D CNN and Transformer Architectures for 3D Liver and Hepatic Tumour Segmentation in Medical Imaging using a PyTorch Lightning CLI Reproducible Pipeline},
-  author  = {Fdez-Gonzalez, Marcos and Nodar-Corral, Lois and Fdez-Vidal, Xose R. and Estevez-Fernandez, Sergio and Comesa{\~n}a, Enrique and L{\'o}pez-Pi{\~n}eiro, Pablo},
+  title   = {Comprehensive Evaluation of 3D CNN and Transformer Architectures for 3D Liver Segmentation in Medical Imaging: A Reproducible, Externally Validated Benchmark Built on a PyTorch Lightning CLI Pipeline},
+  author  = {Fdez-Gonzalez, Marcos and L{\'o}pez-Pi{\~n}eiro, Pablo and Nogueira-Sixto, Manuel and Nodar-Corral, Lois and Fdez-Vidal, Xose R. and Estevez-Fernandez, Sergio and Comesa{\~n}a, Enrique},
   journal = {Informatics in Medicine Unlocked},
   year    = {2026},
   note    = {Under revision}
