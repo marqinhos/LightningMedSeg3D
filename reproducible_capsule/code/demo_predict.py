@@ -30,7 +30,10 @@ ARCHITECTURES = [
     "unet", "vnet", "resunet", "unetpp", "attention_unet",
     "unetr", "swin_unetr", "medformer", "segformer",
 ]
-ROI = (32, 32, 32)
+# 64**3 (not 32**3): SwinUNETR's default 5x downsampling (patch_size=2, 4
+# stages) reduces a 32**3 input to an exact 1x1x1 bottleneck, which torch's
+# InstanceNorm3d rejects ("Expected more than 1 spatial element").
+ROI = (64, 64, 64)
 NUM_CLASSES = 2
 
 

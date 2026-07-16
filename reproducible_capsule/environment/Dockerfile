@@ -1,5 +1,13 @@
-# Code Ocean-compatible environment for the LightningMedSeg3D reproducible capsule.
+# Environment for the LightningMedSeg3D reproducible capsule.
 # CPU-only so the capsule is small, portable and runs without a GPU.
+#
+# NOTE for Code Ocean: this Dockerfile is meant for local `docker build` (see
+# REPRODUCING.md). Code Ocean rejects a public Docker Hub base image such as
+# `python:3.10-slim` uploaded directly ("Invalid Dockerfile: Only base Docker
+# images from Code Ocean are supported"). On Code Ocean, pick a Python base
+# image via the Environment tab's Base Image picker instead, and add the
+# `pip install` lines below as Post-Install commands -- see REPRODUCING.md
+# for the exact steps.
 FROM python:3.10-slim
 
 ENV PYTHONUNBUFFERED=1 \
