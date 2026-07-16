@@ -1,6 +1,4 @@
-import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from .unet_utils import inconv, down_block
 from .utils import get_block, get_norm
 from .attention_unet_utils import attention_up_block

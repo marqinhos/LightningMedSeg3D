@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .conv_layers import BasicBlock, Bottleneck, ConvNormAct
+from .conv_layers import BasicBlock
 
 class inconv(nn.Module):
     def __init__(self, in_ch, out_ch, kernel_size=[3,3,3], block=BasicBlock, norm=nn.BatchNorm3d):

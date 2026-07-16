@@ -1,10 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .conv_layers import BasicBlock, Bottleneck, ConvNormAct, DepthwiseSeparableConv, MBConv, FusedMBConv
+from .conv_layers import BasicBlock, ConvNormAct, DepthwiseSeparableConv, MBConv, FusedMBConv
 from .trans_layers import TransformerBlock, LayerNorm
 
-from einops import rearrange
 
 
 class BidirectionAttention(nn.Module):
@@ -42,8 +41,8 @@ class BidirectionAttention(nn.Module):
     def rearrange1(self, x, heads):
         # substitue for rearrange as it is not supported by pytorch2.0 torch.compile
         # b (dim_head heads) d h w -> b heads (d h w) dim_head
-        b, l, d, h, w = x.shape
-        dim_head = int(l / heads)
+        b, c, d, h, w = x.shape
+        dim_head = int(c / heads)
         x = x.view(b, dim_head, heads, -1).contiguous() # b dim_head heads (dhw)
         x = x.permute(0, 2, 3, 1).contiguous() # b heads (dhw) dim_head
 
@@ -51,8 +50,8 @@ class BidirectionAttention(nn.Module):
     def rearrange2(self, x, d, h, w):
         # substitue for rearrange as it is not supported by pytorch2.0 torch.compile
         # 'b heads (d h w) dim_head -> b (dim_head heads) d h w'
-        b, heads, l, dim_head = x.shape
-        x = x.permute(0, 3, 1, 2).contiguous() # b, dim_head, heads, l
+        b, heads, n, dim_head = x.shape
+        x = x.permute(0, 3, 1, 2).contiguous() # b, dim_head, heads, n
         x = x.view(b, (heads*dim_head), d, h, w).contiguous()
 
         return x

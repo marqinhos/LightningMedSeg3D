@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from einops import rearrange
 
 
 __all__ = [
@@ -59,18 +58,18 @@ class Attention(nn.Module):
     def rearrange1(self, x, heads):
         # rearrange is not supported by pytorch2.0 torch.compile
         # 'b l (heads dim_head) -> b heads l dim_head'
-        b, l, n = x.shape
+        b, seq_len, n = x.shape
         dim_head = int(n / heads)
-        x = x.view(b, l, heads, dim_head).contiguous()
+        x = x.view(b, seq_len, heads, dim_head).contiguous()
         x = x.permute(0, 2, 1, 3).contiguous()
 
         return x
 
     def rearrange2(self, x):
          # 'b heads l dim_head -> b l (dim_head heads)')
-         b, heads, l, dim_head = x.shape
+         b, heads, seq_len, dim_head = x.shape
          x = x.permute(0, 2, 1, 3).contiguous()
-         x = x.view(b, l, -1).contiguous()
+         x = x.view(b, seq_len, -1).contiguous()
 
          return x
 

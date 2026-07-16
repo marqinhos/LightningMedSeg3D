@@ -1,7 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-from .conv_layers import BasicBlock, Bottleneck, ConvNormAct
 from .utils import get_block, get_norm
 
 

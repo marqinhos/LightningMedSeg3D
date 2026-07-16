@@ -195,7 +195,6 @@ class UNETR(nn.Module):
 
     def load_from(self, weights):
         with torch.no_grad():
-            res_weight = weights
             # copy weights from patch embedding
             for i in weights['state_dict']:
                 print(i)

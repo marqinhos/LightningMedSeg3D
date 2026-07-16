@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .conv_layers import BasicBlock, Bottleneck, ConvNormAct
+from .conv_layers import BasicBlock
 
 class AttentionBlock(nn.Module):
     def __init__(self, g_ch, l_ch, int_ch):
