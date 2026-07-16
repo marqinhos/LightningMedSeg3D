@@ -5,13 +5,7 @@ authors:
   - family-names: "Fdez-Gonzalez"
     given-names: "Marcos"
     email: "marcos.fgonzalez@usc.es"
-    affiliation: "CITIUS, Universidade de Santiago de Compostela"
-  - family-names: "Lopez-Pineiro"
-    given-names: "Pablo"
-    affiliation: "Universidade de Santiago de Compostela"
-  - family-names: "Nogueira-Sixto"
-    given-names: "Manuel"
-    affiliation: "Complejo Hospitalario Universitario de Vigo"
+    affiliation: "CiTIUS, Universidade de Santiago de Compostela"
   - family-names: "Nodar-Corral"
     given-names: "Lois"
     affiliation: "iTerra, Universidade de Santiago de Compostela"
@@ -24,7 +18,7 @@ authors:
   - family-names: "Comesana"
     given-names: "Enrique"
     affiliation: "iTerra, Universidade de Santiago de Compostela"
-license: Apache-2.0
+license: AGPL-3.0-or-later
 version: 1.0.0
 date-released: "2026-06-01"
 url: "https://github.com/Removirt/LightningMedSeg3D"
@@ -40,10 +34,6 @@ preferred-citation:
   authors:
     - family-names: "Fdez-Gonzalez"
       given-names: "Marcos"
-    - family-names: "Lopez-Pineiro"
-      given-names: "Pablo"
-    - family-names: "Nogueira-Sixto"
-      given-names: "Manuel"
     - family-names: "Nodar-Corral"
       given-names: "Lois"
     - family-names: "Fdez-Vidal"

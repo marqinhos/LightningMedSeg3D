@@ -16,3 +16,4 @@ data/
 .ruff_cache/
 .vscode/
 .idea/
+docs/_build/

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Reproducible-run entry point for the LightningMedSeg3D Code Ocean capsule.
+set -euo pipefail
+
+echo "=================================================================="
+echo " LightningMedSeg3D — reproducible capsule"
+echo "=================================================================="
+
+python -c "import lightning_medseg3d, torch; print('lightning_medseg3d', lightning_medseg3d.__version__, '| torch', torch.__version__, '| device: cpu')"
+
+echo
+echo "--- Synthetic end-to-end demo: build all 9 architectures + inference ---"
+python "$(dirname "$0")/demo_predict.py"
+
+echo
+echo "Reproducible run complete. See /results for demo_prediction.nii.gz and demo_summary.json."

@@ -156,12 +156,25 @@ class SegmentationModule(pl.LightningModule):
             lr=self.hparams.learning_rate,
             weight_decay=self.hparams.weight_decay,
         )
-        if self.hparams.scheduler == "cosine":
-            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-                optimiser, T_max=self.hparams.max_epochs
-            )
-        elif self.hparams.scheduler == "none":
+        if self.hparams.scheduler == "none":
             return {"optimizer": optimiser}
-        else:
+        if self.hparams.scheduler != "cosine":
             raise ValueError(f"Unknown scheduler {self.hparams.scheduler!r}")
+
+        # Cosine annealing, optionally preceded by a linear learning-rate
+        # warm-up of ``warmup_epochs`` epochs (standard for transformer
+        # backbones such as UNETR/SwinUNETR).
+        warmup_epochs = int(self.hparams.warmup_epochs)
+        cosine = torch.optim.lr_scheduler.CosineAnnealingLR(
+            optimiser, T_max=max(1, self.hparams.max_epochs - warmup_epochs)
+        )
+        if warmup_epochs > 0:
+            warmup = torch.optim.lr_scheduler.LinearLR(
+                optimiser, start_factor=0.01, total_iters=warmup_epochs
+            )
+            scheduler = torch.optim.lr_scheduler.SequentialLR(
+                optimiser, schedulers=[warmup, cosine], milestones=[warmup_epochs]
+            )
+        else:
+            scheduler = cosine
         return {"optimizer": optimiser, "lr_scheduler": scheduler}

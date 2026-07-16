@@ -8,21 +8,19 @@ version = "1.0.0"
 description = "Reproducible 3D medical image segmentation benchmark built on PyTorch Lightning CLI and MONAI. Companion code for the BTCV/MSD Task03 liver segmentation benchmark paper."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "Apache-2.0" }
+license = { text = "AGPL-3.0-or-later" }
 authors = [
     { name = "Marcos Fdez-Gonzalez", email = "marcos.fgonzalez@usc.es" },
-    { name = "Pablo López-Piñeiro" },
-    { name = "Manuel Nogueira-Sixto" },
     { name = "Lois Nodar-Corral" },
     { name = "Xose R. Fdez-Vidal" },
     { name = "Sergio Estevez-Fernandez" },
-    { name = "Enrique Comesaña" },
+    { name = "Enrique Comesana" },
 ]
 keywords = ["medical-imaging", "segmentation", "pytorch-lightning", "monai", "btcv", "msd"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: Apache Software License",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Topic :: Scientific/Engineering :: Medical Science Apps.",
@@ -51,6 +49,12 @@ dev = ["pytest>=7.4", "ruff>=0.4", "black>=24.3", "mypy>=1.8"]
 [project.scripts]
 # Single Lightning CLI entry-point that handles fit/validate/test/predict.
 lightning-medseg3d = "lightning_medseg3d.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Removirt/LightningMedSeg3D"
+Repository = "https://github.com/Removirt/LightningMedSeg3D"
+Documentation = "https://lightningmedseg3d.readthedocs.io"
+Issues = "https://github.com/Removirt/LightningMedSeg3D/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

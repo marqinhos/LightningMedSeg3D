@@ -1,0 +1,24 @@
+metadata_version: 1
+name: "LightningMedSeg3D — reproducible capsule"
+description: >
+  Reproducible capsule for LightningMedSeg3D, a configuration-driven PyTorch
+  Lightning framework for reproducible 3D medical image segmentation
+  benchmarking. The reproducible run builds all nine convolutional and
+  transformer architectures through the model factory, verifies their output
+  shapes, and executes a CPU-only synthetic end-to-end sliding-window inference
+  demo that writes a NIfTI prediction and a JSON summary to /results.
+authors:
+  - name: "Marcos Fdez-Gonzalez"
+    affiliation: "CiTIUS, Universidade de Santiago de Compostela"
+  - name: "Lois Nodar-Corral"
+    affiliation: "iTerra, Universidade de Santiago de Compostela"
+  - name: "Xose R. Fdez-Vidal"
+    affiliation: "Universidade de Santiago de Compostela"
+  - name: "Sergio Estevez-Fernandez"
+    affiliation: "Complejo Hospitalario Universitario de Vigo"
+  - name: "Enrique Comesana"
+    affiliation: "iTerra, Universidade de Santiago de Compostela"
+license: "AGPL-3.0-or-later"
+source:
+  code: "https://github.com/Removirt/LightningMedSeg3D"
+  weights_doi: "10.5281/zenodo.21037952"

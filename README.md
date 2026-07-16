@@ -1,6 +1,12 @@
-# LightningMedSeg3D
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/_static/wordmark-dark.svg">
+    <img src="docs/_static/wordmark-light.svg" alt="LightningMedSeg3D" width="520"/>
+  </picture>
+</p>
 
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-readthedocs-8CA1AF.svg)](https://lightningmedseg3d.readthedocs.io)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch Lightning](https://img.shields.io/badge/lightning-CLI-purple.svg)](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html)
 [![MONAI](https://img.shields.io/badge/MONAI-1.3%2B-orange.svg)](https://monai.io/)
@@ -122,9 +128,10 @@ If you use this toolkit, please cite:
 ```bibtex
 @article{FdezGonzalez2026LiverBenchmark,
   title   = {Comprehensive Evaluation of 3D CNN and Transformer Architectures for 3D Liver Segmentation in Medical Imaging: A Reproducible, Externally Validated Benchmark Built on a PyTorch Lightning CLI Pipeline},
-  author  = {Fdez-Gonzalez, Marcos and L{\'o}pez-Pi{\~n}eiro, Pablo and Nogueira-Sixto, Manuel and Nodar-Corral, Lois and Fdez-Vidal, Xose R. and Estevez-Fernandez, Sergio and Comesa{\~n}a, Enrique},
+  author  = {Fdez-Gonzalez, Marcos and Nodar-Corral, Lois and Fdez-Vidal, Xose R. and Estevez-Fernandez, Sergio and Comesana, Enrique},
   journal = {Informatics in Medicine Unlocked},
-  year    = {2026},
-  note    = {Under revision}
+  year    = {2026}
 }
 ```
+
+For software citation (version, license, archived weights DOI), see [`CITATION.cff`](CITATION.cff).
